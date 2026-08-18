@@ -13,7 +13,9 @@ const SectionHeader = ({
     return (
         <section className={`relative ${center ? "text-center" : ""}`}>
             {heading && (
-                <h2 className="text-3xl font-bold mb-4 uppercase">{heading}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase">
+                    {heading}
+                </h2>
             )}
 
             {paragraph && (
