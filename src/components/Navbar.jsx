@@ -1,47 +1,18 @@
-import { RiCloseLargeFill } from "react-icons/ri";
 import Logo from "./../assets/oldfashionedweek-logo.svg";
 import { NavLink } from "react-router";
 import { useCountry } from "../context/CountryContext";
+import ThemeToggle from "./navigation/ThemeToggle";
+import MainNav from "./navigation/MainNav";
 
-const navItems = [
-    {
-        href: "/",
-        label: "Home",
-    },
-    {
-        href: "/join-our-cause",
-        label: "OUR Cause",
-    },
-    {
-        href: "/mix-old-fashioned",
-        label: "Mix an old fashioned",
-    },
-    {
-        href: "/login",
-        label: "Register your bar",
-    },
-    {
-        href: "/archive",
-        label: "Past Events",
-    },
-    {
-        href: "/faqs",
-        label: "FAQ'S",
-    },
-    {
-        href: "/contact",
-        label: "Contact",
-    },
-];
 const Navbar = () => {
     const { selectedCountry, countryChange } = useCountry();
-    console.log(selectedCountry);
+
     return (
-        <header className="navbar bg-black text-white">
+        <header className="navbar bg-black text-white sticky top-0 z-50">
             <div className="navbar-start">
                 <select
                     defaultValue={selectedCountry}
-                    className="select select-ghost w-20"
+                    className="select select-ghost w-14 text-sm pl-1 pr-0 py-0 h-6 border-0 rounded-full"
                     aria-label="Select country"
                     onChange={(e) => countryChange(e.currentTarget.value)}
                 >
@@ -49,71 +20,20 @@ const Navbar = () => {
                     <option value="CA">CA</option>
                     <option value="UK">UK</option>
                 </select>
+                <ThemeToggle />
             </div>
 
-            <div className="navbar-center">
+            <div className="navbar-center ml-5">
                 <NavLink to="/">
-                    <img src={Logo} alt="Old Fashioned Week" />
+                    <img
+                        className="w-45 md:w-75"
+                        src={Logo}
+                        alt="Old Fashioned Week"
+                    />
                 </NavLink>
             </div>
 
-            <div className="navbar-end">
-                <div className="drawer drawer-end">
-                    <input
-                        id="sideMenu"
-                        type="checkbox"
-                        className="drawer-toggle"
-                    />
-                    <div className="flex justify-end">
-                        <label
-                            htmlFor="sideMenu"
-                            className="drawer-button"
-                            aria-label="Open navigation menu"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="white"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16"
-                                />
-                            </svg>
-                        </label>
-                    </div>
-                    <div className="drawer-side">
-                        <label
-                            htmlFor="sideMenu"
-                            aria-label="close sidebar"
-                            className="drawer-overlay"
-                        >
-                            <RiCloseLargeFill className="left-3 top-3 absolute" />
-                        </label>
-                        <nav
-                            aria-label="Main navigation"
-                            className="bg-black min-h-full w-80 p-4"
-                        >
-                            <ul className="menu ">
-                                {navItems.map((item) => (
-                                    <li key={item.href}>
-                                        <NavLink
-                                            className="uppercase text-xl"
-                                            to={item.href}
-                                        >
-                                            {item.label}
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+            <MainNav />
         </header>
     );
 };

@@ -11,7 +11,7 @@ const Banner = () => {
                 <img className="w-full" src={HomeHero} alt="Banner" />
             </picture>
 
-            <div className="w-full relative md:absolute md:bottom-[4%] md:left-[4%] md:w-[42%] overflow-hidden">
+            <div className="w-full relative md:absolute md:bottom-[24%] md:left-[4%] md:w-[42%] overflow-hidden">
                 <GlassEffect className="md:hidden" side="top" />
 
                 <div className="relative space-y-6">

@@ -4,7 +4,7 @@ import SipAndSupport from "/images/sip-n-support-logo.svg";
 const CocktailsForCause = () => {
     return (
         <div className="max-w-7xl mx-auto">
-            <div className="bg-white section-padding text-black grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
+            <div className="bg-base  dark:brightness-100 text-black dark:text-white section-padding  grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
                 <SectionHeader
                     center
                     heading={
@@ -33,7 +33,7 @@ const CocktailsForCause = () => {
 
                 <div className="flex justify-center">
                     <img
-                        className="w-full max-w-75 md:max-w-100"
+                        className="w-full max-w-75 md:max-w-100 dark:invert-100"
                         src={SipAndSupport}
                         alt="Sip and Support"
                     />
