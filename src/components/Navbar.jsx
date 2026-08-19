@@ -1,6 +1,7 @@
 import { RiCloseLargeFill } from "react-icons/ri";
 import Logo from "./../assets/oldfashionedweek-logo.svg";
 import { NavLink } from "react-router";
+import { useCountry } from "../context/CountryContext";
 
 const navItems = [
     {
@@ -33,13 +34,16 @@ const navItems = [
     },
 ];
 const Navbar = () => {
+    const { selectedCountry, countryChange } = useCountry();
+    console.log(selectedCountry);
     return (
         <header className="navbar bg-black text-white">
             <div className="navbar-start">
                 <select
-                    defaultValue="USA"
+                    defaultValue={selectedCountry}
                     className="select select-ghost w-20"
                     aria-label="Select country"
+                    onChange={(e) => countryChange(e.currentTarget.value)}
                 >
                     <option value="USA">USA</option>
                     <option value="CA">CA</option>
