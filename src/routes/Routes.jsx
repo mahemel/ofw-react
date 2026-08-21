@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Homepage from "../pages/homepage/Homepage";
 import Errorpage from "../pages/errorpage/Errorpage";
 import JoinOurCause from "../pages/join-our-cause/JoinOurCause";
+import Signup from "../pages/signup/Signup";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
             {
                 path: "join-our-cause",
                 Component: JoinOurCause,
+            },
+            {
+                path: "signup",
+                Component: Signup,
             },
         ],
         errorElement: <Errorpage></Errorpage>,

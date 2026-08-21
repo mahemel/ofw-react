@@ -29,8 +29,8 @@ const navItems = [
         label: "FAQ'S",
     },
     {
-        href: "/contact",
-        label: "Contact",
+        href: "/signup",
+        label: "Sign Up",
     },
 ];
 const MainNav = () => {
